@@ -1,0 +1,19 @@
+﻿@model MVCModelBinderBug.Models.FormPostViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FormPost</title>
+</head>
+<body>
+    <div> 
+        @Html.DisplayNameFor(p=>p.Name) : @Model.Name<br />
+        @Html.DisplayNameFor(p => p.SomeOtherProperty) : @Model.SomeOtherProperty
+    </div>
+</body>
+</html>

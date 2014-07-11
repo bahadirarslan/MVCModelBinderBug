@@ -1,0 +1,32 @@
+﻿@model MVCModelBinderBug.Models.HomeViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>MVC ModelBinder Bug</h1>
+    <div> 
+        @using(Html.BeginForm("FormPost", "Home", FormMethod.Post)){
+        @Html.HiddenFor(p=>p.MoreProperty)
+
+        @Html.DisplayNameFor(p=>p.Model.Name)
+        @Html.TextBoxFor(p=>p.Model.Name)
+        <br />
+        @Html.DisplayNameFor(p=>p.Model.isTest)
+        @Html.CheckBoxFor(p=>p.Model.isTest)
+        <br />
+        @Html.DisplayNameFor(p=>p.SomeOtherProperty)
+        @Html.TextBoxFor(p=>p.SomeOtherProperty)
+            <br />
+        <input type="submit" value="Submit Values" />
+        }
+    </div>
+</body>
+</html>
